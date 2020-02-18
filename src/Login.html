@@ -1,31 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+
+    function constructor(props){
+        super(props);
+        this.login = this.login.bind(this);
+        this.sing= this.sing.bind(this);
+        this.handleChange= this.handleChange.bind(this);
+        this.state = {
+            email: '',
+            password: ''}
+
+    }
+
+    function login(e){
+        e.preventDefault();
+        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+        }).catch((error) => {console.log(error);
+        });
+
+    }
+
+    function sing(e){
+        e.preventDefault();
+        fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            .catch((error) => {console.log(error);
+            });
+
+    }
+
+    function handleChange(e) {
+        this.setState({[e.target.name]: [e.target.value]});
+    }
+</script>
+
+<script>
+    class App extends Component{
+        constructor(props) {
+            super(props);
+            this.state = {
+                user:{}
+            }
+        }
+
+        componentDidMount() {
+            this.authListener();
+        }
+
+
+        authListener(){
+            fire.auth().onAuthStateChanged((user) => {
+                // console.log(user);
+                if (user){
+                    this.setState({ user });
+                    //localStorage.setItem('user', user.uid);
+                } else {
+                    this.setState({ user : null});
+                    //localStorage.removeItem('user');
+                }
+            });
+        }
+
+        render() {
+           //TODO Return user Name and be able to logout
+        );
+        }
+    }
+    export default App;
+</script>
 <head>
     <meta charset="UTF-8">
     <title>Welcome to MySplitFlix</title>
 </head>
 <body>
 <h1>Welcome to MySplitFlix</h1>
+
+    //TODO you can change stuff here if you want. i still need to fix it.
 <div className={"login"}>
     <h1>Login</h1>
-<form>
-    <div className={"email"}>
-        <label about={"ExampleInput"}>Email Address</label>
-        <label>
-            <input name={"email"} placeholder={"E-Mail"} type={"email"} >
-        </label>
-        <small id={"emailHelp"}></small>
-    </div>
-    <div className={"password"}>
-        <label about={"passwordInput"}>Password</label>
-        <input type={"password"} name={"password"}
-               id={"inputPassword"} placeholder={"Password"}/>
-    </div>
-    <button className={"submission"} type={"submit"}>Login</button>
-    <button>Sign-up</button>
 
-</form>
+    <form>
+        <div className={"email"}>
+            <label about={"ExampleInput"}>Email Address</label>
+            <input value={this.state.email} onChange={this.handleChange} type={"email"} name={"email"}
+                   id={"inputEmail"} placeholder={"E-Mail"}/>
+            <small id={"emailHelp"}></small>
+        </div>
+        <div className={"password"}>
+            <label about={"passwordInput"}>Password</label>
+            <input value={this.state.password} onChange={this.handleChange} type={"password"} name={"password"}
+                   id={"inputPassword"} placeholder={"Password"}/>
+        </div>
+        <button type={"submit"} onClick={this.login} className={"submission"}>Login</button>
+        <button onClick={this.sing} style={{marginLeft:
+        '25px'}} className={"btn-sing"}>Sign-up</button>
+        <button className={"submission"} type={"submit"}>Login</button>
+        <button>Sign-up</button>
+
+    </form>
+</div>
+
 </div>
 
 </body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyB63633jJqvLCTJq6bfNPww7esiB7l3SoE",
+        authDomain: "juniordesign-3d339.firebaseapp.com",
+        databaseURL: "https://juniordesign-3d339.firebaseio.com",
+        projectId: "juniordesign-3d339",
+        storageBucket: "juniordesign-3d339.appspot.com",
+        messagingSenderId: "542517015780",
+        appId: "1:542517015780:web:41cc865a0618a6587f28f1",
+        measurementId: "G-FGF2X16SGH"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+
 </html>

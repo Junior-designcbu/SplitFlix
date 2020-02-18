@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    import fire from './config/fire';
+
+    class HomePage extends Component{
+        constructor(props) {
+            super(props);
+            this.logout= this.logout.bind(this);
+        }
+
+        logout(){
+            fire.auth().signOut();
+        }
+
+    }
+
+    export default HomePage;
+
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+<body>
+<h3>Welcome to Flixify Homepage</h3>
+<div className={"homepage"}>
+    <h1>Welcome to the HomePage</h1>
+    <button onClick={this.logout}>Logout</button>
+</div>
+</body>
+</html>
