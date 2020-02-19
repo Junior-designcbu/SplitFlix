@@ -4,7 +4,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "node": "12.14.1",
-    "npm": "6.13.7"
+    "npm": "6.13.7",
+    "socket.io": "^2.3.0"
   },
   "scripts": {
     "prestart": "node server.js",
@@ -13,9 +14,7 @@
   "engines": {
     "express": "^4.17.1",
     "node": "12.14.1",
-    "npm": "6.13.7"
-  },
-  "devDependencies": {
+    "npm": "6.13.7",
     "socket.io": "^2.3.0"
   }
 }

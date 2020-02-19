@@ -44,3 +44,8 @@ function dumpOptionsInfo() {
     console.info("Track constraints:");
     console.info(JSON.stringify(videoTrack.getConstraints(), null, 2));
 }
+
+// this is the block of whatever that existed in package json
+// "devDependencies": {
+//     "socket.io": "^2.3.0"
+// }
