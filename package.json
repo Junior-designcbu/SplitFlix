@@ -7,7 +7,8 @@
     "npm": "6.13.7"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "poststart": "node video.js"
   },
   "engines": {
     "express": "^4.17.1",
