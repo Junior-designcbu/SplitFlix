@@ -4,7 +4,9 @@ const stopElem = document.getElementById("stop");
 const logElem = document.getElementById("log");
 
 const displayMediaOptions = {
-    video: true,
+    video: {
+        cursor: "never"
+    },
     audio: true
 };
 
@@ -19,12 +21,19 @@ stopElem.addEventListener("click", function() {
 
 
 async function startCapture() {
-    logElem.innerHTML = "";
-    try {
-        videoElem.srcObject = await navigator.mediaDevices.getUserMedia(displayMediaOptions);
-        dumpOptionsInfo();
-    } catch(err) {
-        console.error("Error: " + err);
+    // logElem.innerHTML = "";
+    // try {
+    //     videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+    //     dumpOptionsInfo();
+    // } catch(err) {
+    //     console.error("Error: " + err);
+    // }
+    if (navigator.getDisplayMedia) {
+        return navigator.getDisplayMedia({video: true});
+    } else if (navigator.mediaDevices.getDisplayMedia) {
+        return navigator.mediaDevices.getDisplayMedia({video: true});
+    } else {
+        return navigator.mediaDevices.getUserMedia({video: true});
     }
 }
 
