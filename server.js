@@ -1,6 +1,5 @@
 // import socketIO from "socket.io";
 // import createServer from "http";
-src="video.js";
 
 const express = require('express');
 const app = express();

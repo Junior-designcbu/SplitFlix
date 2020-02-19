@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Deploying to Heroku</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js%22%3E"></script>
+<body>
 
-<body id="page-top">
-    <p><button id="start">Start Capture</button>&nbsp;<button id="stop">Stop Capture</button></p>
 
-    <video id="video" autoplay></video>
-    <br>
+    <p>This example shows you the contents of the selected part of your display.
+        Click the Start Capture button to begin.</p>
 
-    <strong>Log:</strong>
-    <br>
-    <pre id="logElem"></pre>
-    <script src="server.js"></script>
-    <script src="video.js"></script>
+        <p><button id="start">Start Capture</button>&nbsp;<button id="stop">Stop Capture</button></p>
+
+<video id="video" autoplay></video>
+<br>
+
+<strong>Log:</strong>
+<br>
+<pre id="logElem"></pre>
+
+
+
+<script src="video.js"></script>
+<script>
+
+    var socket = io();
+    socket.on('connect', function () {
+        socket.send('hi');
+        console.log("testeerrr");
+
+        socket.on('message', function (msg) {
+            // my msg
+            console.log("test");
+
+        });
+    });
+
+</script>
+
 </body>
 </html>
