@@ -4,9 +4,7 @@ const stopElem = document.getElementById("stop");
 const logElem = document.getElementById("log");
 
 const displayMediaOptions = {
-    video: {
-        cursor: "never"
-    },
+    video: true,
     audio: true
 };
 
@@ -23,7 +21,7 @@ stopElem.addEventListener("click", function() {
 async function startCapture() {
     logElem.innerHTML = "";
     try {
-        videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+        videoElem.srcObject = await navigator.mediaDevices.getUserMedia(displayMediaOptions);
         dumpOptionsInfo();
     } catch(err) {
         console.error("Error: " + err);
