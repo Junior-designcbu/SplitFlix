@@ -27,7 +27,7 @@ export class Server {
   }
 
   private configureRoutes(): void {
-    this.app.get("/my-split-flix", (req, res) => {
+    this.app.get("/", (req, res) => {
       res.sendFile("index.html");
     });
   }
