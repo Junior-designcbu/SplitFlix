@@ -29,7 +29,7 @@ export class Server {
   private configureRoutes(): void {
     this.app.get("/", (req, res) => {
       // res.sendFile("/index.html");
-      res.sendFile("/SplitFlix");
+      res.redirect("/SplitFlix");
     });
   }
  
