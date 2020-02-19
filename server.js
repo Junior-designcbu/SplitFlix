@@ -1,6 +1,6 @@
 import socketIO from "socket.io";
 // import createServer from "http";
-const httpServer = require('http');
+const httpServer = require('https');
 const io = require('socket.io')(httpServer);
 
 const express = require('express');
