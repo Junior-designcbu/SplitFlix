@@ -21,13 +21,14 @@ stopElem.addEventListener("click", function() {
 
 
 async function startCapture() {
-    videoElem.innerHTML = "";
+    let captureStream = null;
     try {
-        videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+        captureStream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
         dumpOptionsInfo();
     } catch(err) {
         console.error("Error: " + err);
     }
+    return captureStream;
 }
 
 function stopCapture(evt) {
