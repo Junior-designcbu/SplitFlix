@@ -2,6 +2,7 @@ const videoElem = document.getElementById("video");
 const startElem = document.getElementById("start");
 const stopElem = document.getElementById("stop");
 
+//constraints for media display
 const displayMediaOptions = {
     video: {
         cursor: "never"
@@ -43,9 +44,7 @@ function dumpOptionsInfo() {
     console.info(JSON.stringify(videoTrack.getConstraints(), null, 2));
 }
 
-alert('video is being called');
-
-// this is the block of whatever that existed in package json
+// this is the block of devDependency that existed in package json
 // "devDependencies": {
 //     "socket.io": "^2.3.0"
 // }
