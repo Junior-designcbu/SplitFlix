@@ -1,7 +1,7 @@
-const videoElem = document.getElementById("video");
+var videoElem = document.getElementById("video");
 const startElem = document.getElementById("start");
 const stopElem = document.getElementById("stop");
-const logElem = document.getElementById("log");
+// const logElem = document.getElementById("log");
 
 const displayMediaOptions = {
     video: {
@@ -21,7 +21,7 @@ stopElem.addEventListener("click", function() {
 
 
 async function startCapture() {
-    logElem.innerHTML = "";
+    //logElem.innerHTML = "";
     try {
         videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
         dumpOptionsInfo();
