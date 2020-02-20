@@ -8,7 +8,7 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.use(express.static(path.join(__dirname, "../root")));
+app.use(express.static(path.join(__dirname, "root")));
 
 io.on("connection", socket => {
     console.log("Socket connected.");
