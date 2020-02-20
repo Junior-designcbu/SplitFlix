@@ -1,4 +1,4 @@
-const httpServer = require('https');
+const httpServer = require('http');
 const io = require('socket.io')(httpServer);
 
 const express = require('express');
