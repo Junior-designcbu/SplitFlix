@@ -4,8 +4,8 @@ const path = require('path');
 const httpServer = require('http').createServer(app);
 const io = require('socket.io')(httpServer);
 
-// // our express middleware, serving all files under directory of root
-// app.use(express.static(path.join(__dirname, "root")));
+// our express middleware, serving all files under directory of root
+app.use(express.static('root'));
 
 //upon get request to server, respond with index.html
 app.get('/', function(req, res) {
