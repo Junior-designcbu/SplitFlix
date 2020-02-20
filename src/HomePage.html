@@ -1,23 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script>
-        import fire from './config/fire';
-
-        class HomePage extends Component{
-            constructor(props) {
-                super(props);
-                this.logout= this.logout.bind(this);
-            }
-
-            logout(){
-                fire.auth().signOut();
-            }
-
-        }
-
-        export default HomePage;
-
-    </script>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -27,11 +9,6 @@
         <title>Homepage</title>
     </head>
     <body>
-        <div className={"homepage"}>
-            <h1>Welcome to the HomePage</h1>
-            <button onClick={this.logout}>Logout</button>
-        </div>
-
         <div class="container" id="container">
             <div class="form-container sign-up-container">
                 <form action="#">
@@ -80,6 +57,7 @@
             </div>
         </div>
         
-        <script src="main.js"></script>
+
+    <script src="main.js"></script>
     </body>
 </html>
