@@ -6,7 +6,7 @@ const app = express();
 const path = require('path');
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'server.js',  'video.js', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 io.on("connection", socket => {
