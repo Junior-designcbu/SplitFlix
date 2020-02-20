@@ -45,7 +45,7 @@ function dumpOptionsInfo() {
     console.info(JSON.stringify(videoTrack.getConstraints(), null, 2));
 }
 
-module.exports;
+alert('video is being called');
 
 // this is the block of whatever that existed in package json
 // "devDependencies": {
