@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="login.css" />
+
 <head>
     <meta charset="UTF-8">
     <title>Welcome to MySplitFlix</title>
+    <link rel="stylesheet" href="login.css" />
 </head>
+
 <body>
 <h1>Welcome to MySplitFlix </h1>
 <div id="login_div" class="main_div">
     <h3>Login</h3>
-    <input type="email" placeholder="Email" id="email_field"/>
-    <input type="password" placeholder="Password" id="password_field"/>
+    <input type="email" placeholder="Email" id="email_value"/>
+    <input type="password" placeholder="Password" id="password_value"/>
+
     <button onclick="login()">Log-in</button>
 </div>
 
-<div id="user_div" class="loggedin-div">
+<div id="user_div" class="logged-div">
     <h3>Welcome</h3>
     <p id="user_parameter"> You are currently logged in</p>
     <button onclick="logout()">Logout</button>
@@ -23,11 +26,28 @@
 
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+<script>
+    src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"
+    // Firebase App (the core Firebase SDK) is always required and
+    // must be listed before other Firebase SDKs
+    var firebase = require("firebase/app");
+
+    // Add the Firebase products that you want to use
+    require("firebase/auth");
+    require("firebase/firestore");
+    require("firebase/init");
+</script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
+<script>
+    src = "https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js";
+    src = "https://firebase.google.com/docs/web/setup#available-libraries";
+    src = "/__/firebase/7.8.2/firebase-auth.js";
+    src = "/__/firebase/7.8.2/firebase-app.js";
+    src = "/__/firebase/7.8.2/firebase-database.js";
+    src = "/__/firebase/init.js";
+</script>
 
 <script>
     // Your web app's Firebase configuration

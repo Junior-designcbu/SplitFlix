@@ -1,7 +1,7 @@
 body {
     background: #fff;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
 }
@@ -11,10 +11,9 @@ input, button {
     font-weight: 700;
 }
 
-.main-div, .loggedin-div {
+.main-div, .logged-div {
     width: 20%;
-    margin: 0px auto;
-    margin-top: 150px;
+    margin: 150px auto 0;
     padding: 20px;
     display: none;
 }
@@ -37,7 +36,7 @@ input, button {
     border: 1px solid #777;
 }
 
-.main-div button, .loggedin-div button {
+.main-div button, .logged-div button {
     background: #5d8ffc;
     color: #fff;
     border: 1px solid #5d8ffc;
@@ -50,7 +49,7 @@ input, button {
     -moz-transition: 0.3s;
 }
 
-.main-div button:hover, .loggedin-div button:hover {
+.main-div button:hover, .logged-div button:hover {
     background: #fff;
     color: #5d8ffc;
     border: 1px solid #5d8ffc;
