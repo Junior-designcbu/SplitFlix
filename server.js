@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const httpServer = require('http').createServer(app);
-const io = require('socket.io')(httpServer);
+const io = require('socket.io')(process.env.PORT);
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
@@ -15,9 +15,5 @@ io.on("connection", socket => {
 });
 
 app.listen(process.env.PORT || 4000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
-
-httpServer.listen(process.env.PORT || 4000, function() {
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
