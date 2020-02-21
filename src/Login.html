@@ -10,29 +10,67 @@
 
 <body>
 <h1>Welcome to MySplitFlix </h1>
+<button id="logout">logout</button>
+
+<!--SIGN-UP-->
+<div id="sign-up_div" class="main-div">
+    <div class="content">
+        <h3>Sign-Up</h3>
+        <form id="sing-up_form">
+            <div class="input_fields">
+                <!--        email-->
+                <div class="input_fields">
+                    <input type="email" placeholder="Email" id="sign-up_email" required/>
+                    <label for="sign-up_email">Email Address</label>
+                </div>
+                <!--        password-->
+                <div class="input_fields">
+                    <input type="password" placeholder="Password" id="sign-up_password" required/>
+                    <label for="sign-up_password">Password</label>
+                </div>
+                <button>Sign-UP</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!--LOGIN-->
 <div id="login_div" class="main_div">
-    <h3>Login</h3>
-    <label for="email_value">
-        <input type="email" placeholder="Email" id="email_value"/>
-    </label>
-    <label for="password_value">
-        <input type="password" placeholder="Password" id="password_value"/>
-    </label>
-
-    <button onclick="login()">Log-in</button>
+    <div class="content">
+        <h3>Login</h3>
+        <form id="login_form">
+            <!--        email-->
+            <div class="input_fields">
+                <input type="email" placeholder="Email" id="email_value" required/>
+                <label for="email_value">Email Address</label>
+            </div>
+            <!--        password-->
+            <div class="input_fields">
+                <input type="password" placeholder="Password" id="password_value" required/>
+                <label for="password_value">Password</label>
+            </div>
+            <button>Log-in</button>
+        </form>
+    </div>
 </div>
 
-<div id="user_div" class="logged-div">
-    <h3>Welcome</h3>
-    <p id="user_parameter"> You are currently logged in</p>
-    <button onclick="logout()">Logout</button>
-</div>
 
+<!--May have to delete this-->
+<!--<div id="user_div" class="logged-div">-->
+<!--    <h3>Welcome</h3>-->
+<!--    <p id="user_parameter"> You are currently logged in</p>-->
+<!--    <button onclick="logout()">Logout</button>-->
+<!--</div>-->
 
-
+<!--**********************-->
+<!--ALL OF FIREBASE-->
+<!--ALL OF FIREBASE-->
+<!--ALL OF FIREBASE-->
+<!--**********************-->
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script>
-    src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"
+    src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js";
     // Firebase App (the core Firebase SDK) is always required and
     // must be listed before other Firebase SDKs
     var firebase = require("firebase/app");
@@ -47,22 +85,19 @@
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <!--Connecting the realtime database to Firebase SDK-->
-<body>
-<script>
-    src = "https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js";
-    src = "https://firebase.google.com/docs/web/setup#available-libraries";
-    src = "/__/firebase/7.8.2/firebase-auth.js";
-    src = "/__/firebase/7.8.2/firebase-app.js";
-    src = "/__/firebase/7.8.2/firebase-database.js";
-    src = "/__/firebase/init.js";
-</script>
-</body>
 
-
+<script src = "https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js" ></script>
+<script src = "https://firebase.google.com/docs/web/setup#available-libraries"></script>
+<script src = "https://www.gstatic.com/firebasejs/firebase/7.8.2/firebase-auth.js"></script>
+<script src = "https://www.gstatic.com/firebasejs/firebase/7.8.2/firebase-app.js"></script>
+<script src = "https://www.gstatic.com/firebasejs/firebase/7.8.2/firebase-database.js"></script>
+<script src = "https://www.gstatic.com/firebasejs/firebase/7.8.2/firebase-firestore.js"></script>
+<script src = "https://www.gstatic.com/firebasejs/firebase/init.js"></script>
 <!--Firbase Authentication configuration -->
 
 <script>
     // Your web app's Firebase configuration
+
     var firebaseConfig = {
         apiKey: "AIzaSyB63633jJqvLCTJq6bfNPww7esiB7l3SoE",
         authDomain: "juniordesign-3d339.firebaseapp.com",
@@ -76,9 +111,18 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+
+    //Making auth and firestore references public variables
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    //updating firestore settings
+    db.settings({timestampsInSnapshots: true});
 </script>
 
 <script src="login.js"></script>
+<script src="loginindex.js"></script>
+
 
 </body>
 </html>

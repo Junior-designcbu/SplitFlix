@@ -1,48 +1,52 @@
-import firebase from "firebase";
 
-
-firebase.auth().onAuthStateChanged(function (user) {
+// listen for auth status changes
+auth.onAuthStateChanged(user => {
     if (user) {
-        // User is signed in.
-
-        document.getElementById("user_div").style.display = "block";
-        document.getElementById("login_div").style.display = "none";
-
-        var user = firebase.auth().currentUser;
-
-        if (user != null) {
-
-            var email_id = user.email;
-            document.getElementById("user_parameter").innerHTML = "Welcome User : " + email_id;
-
-        }
-
+        console.log('user logged in: ', user);
     } else {
-        // No user is signed in.
-
-        document.getElementById("user_div").style.display = "none";
-        document.getElementById("login_div").style.display = "block";
-
+        console.log('user logged out');
     }
+})
+
+// sign-up
+const signupForm = document.querySelector('#sign-up_form');
+signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // get user info
+    const email = signupForm['sign-up_email'].value;
+    const password = signupForm['sign-up_password'].value;
+
+    // sign up the user
+    auth.createUserWithEmailAndPassword(email, password).then(cred => {
+        // close the signup modal & reset form
+        document.querySelector('#sign-up_div');
+        signupForm.reset();
+    });
 });
 
-function login() {
+// logout
+const logout = document.querySelector('#logout');
+logout.addEventListener('click', (e) => {
+    e.preventDefault();
+    firebase.auth.signOut();
+});
 
-    var email = document.getElementById("email_value").value;
-    var password = document.getElementById("password_value").value;
+// login
+const loginForm = document.querySelector('#login_form');
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+    // get user info
+    const email = loginForm['login_email'].value;
+    const password = loginForm['login_password'].value;
 
-        window.alert("Error : " + errorMessage);
+    // log the user in
+    auth.signInWithEmailAndPassword(email, password).then((cred) => {
+        // close the sign-up modal & reset form
+        const modal = document.querySelector('#login_div');
+        modal.getInstance(modal).close();
+        loginForm.reset();
     });
 
-}
-
-
-
-function logout() {
-    firebase.auth().signOut().then(r => logout());
-}
+});
