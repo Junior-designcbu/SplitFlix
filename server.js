@@ -12,6 +12,10 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.get('/server.js', function(req, res) {
+    res.sendFile('server.js');
+});
+
 io.on("connection", socket => {
     console.log("Socket connected.");
 });
