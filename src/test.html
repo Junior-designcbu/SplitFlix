@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to MySplitFlix</title>
+</head>
+<body>
+<!--    <h1>Welcome to MySplitFlix </h1>-->
+<!--<button id="logout">logout</button>-->
+<div class="form">
+    <h2>Welcome to SplitFlix </h2>
+    <p>Firebase test</p>
+    <input type="text" placeholder="text" id="text_field">
+    <button id="sbm_but" onclick="storeData()" >Submit</button>
+</div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/7.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var config = {
+        apiKey: "AIzaSyB63633jJqvLCTJq6bfNPww7esiB7l3SoE",
+        authDomain: "juniordesign-3d339.firebaseapp.com",
+        databaseURL: "https://juniordesign-3d339.firebaseio.com",
+        projectId: "juniordesign-3d339",
+        storageBucket: "juniordesign-3d339.appspot.com",
+        messagingSenderId: "542517015780",
+        appId: "1:542517015780:web:41cc865a0618a6587f28f1",
+        measurementId: "G-FGF2X16SGH"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(config);
+
+</script>
+<script src="fire.js"></script>
+</body>
+</html>
