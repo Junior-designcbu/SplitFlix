@@ -9,8 +9,7 @@ app.use(express.static(path.join( "root")));
 
 //upon get request to server, respond with index.html
 app.get('/', function(req, res) {
-    res.sendFile('./index.html');
-
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 io.on("connection", socket => {
