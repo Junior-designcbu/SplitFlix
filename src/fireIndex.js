@@ -29,3 +29,14 @@ function storeLogin() {
     })
 }
 
+// function writeUserData(userId, name, email, password) {
+//     var nameText = document.getElementById("name_field").value;
+//     var emailText = document.getElementById("email_field").value;
+//     var PasswordText = document.getElementById("password_field").value;
+//     firebase.database().ref('users/' + userId).set({
+//         username: nameText,
+//         email: emailText,
+//         password : PasswordText
+//     });
+// }
+
