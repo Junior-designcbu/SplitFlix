@@ -5,6 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="ie-edge"/>
         <script src="https://kit.fontawesome.com/7acccc8da5.js" crossorigin="anonymous"></script>
+
+
+         <!-- The core Firebase JS SDK is always required and must be listed first -->
+         <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+
+         <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+         <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-analytics.js"></script>
+
+
         <link rel="stylesheet" href="index.css">
         <title>Homepage</title>
     </head>
@@ -22,7 +32,7 @@
                     <input type="text" placeholder="Name" id="name_field"/>
                     <input type="current_email" placeholder="Email" id="email_field"/>
                     <input type="current_password" placeholder="Password" id="password_field"/>
-                    <button id="sign_in_bttn" onclick="storeData()">Sign Up</button>
+                    <button id="sign_in_btn">Sign Up</button>
                 </form>
             </div>
 
@@ -58,10 +68,6 @@
             </div>
         </div>
         <script src="main.js"></script>
-
-
-
-
-    <script src="fireIndex.js"></script>
+        <script src="fireIndex.js"></script>
     </body>
 </html>
