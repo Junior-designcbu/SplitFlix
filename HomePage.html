@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie-edge"/>
+        <script src="https://kit.fontawesome.com/7acccc8da5.js" crossorigin="anonymous"></script>
+
+
+         <!-- The core Firebase JS SDK is always required and must be listed first -->
+         <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+
+         <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+         <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-analytics.js"></script>
+
+
+        <link rel="stylesheet" href="index.css">
+        <title>Homepage</title>
+    </head>
+    <body>
+        <div class="container" id="container">
+
+            <div class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Create an Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google"></i></a>
+                    </div>
+                    <span>or use your email to sign up</span>
+                    <input type="text" placeholder="Name" id="name_field"/>
+                    <input type="current_email" placeholder="Email" id="email_field"/>
+                    <input type="current_password" placeholder="Password" id="password_field"/>
+                    <button id="sign_in_btn">Sign Up</button>
+                </form>
+            </div>
+
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1>Sign In</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google"></i></a>
+                    </div>
+                    <span>or use your account</span>
+                    <input type="current_email" placeholder="Email" id="login_email"/>
+                    <input type="current_password" placeholder="Password" id="login_password"/>
+                    <a href="#">Forgot your password?</a>
+                    <button onclick="storeLogin()">Sign in</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>
+                            use this side to sign in if you already have an account
+                        </p>
+                        <button class="ghost" id="signIn" >Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello!</h1>
+                        <p>Create an account to use our product</p>
+                        <button class="ghost" id="signUp" >SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="main.js"></script>
+        <script src="fireIndex.js"></script>
+    </body>
+</html>
