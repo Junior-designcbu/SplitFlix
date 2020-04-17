@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="landpagestyle.css">
+</head>
+<body>
+<h3 class="website">MySplitFLix</h3>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+        <form class="form-inline my-2 my-lg-0">
+<!--            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>-->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+<!--                    <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>-->
+                </li>
+            </ul>
+        </form>
+    </div>
+</nav>
+<div class="container" style="margin-top:30px">
+    <div class="row">
+        <div class="col-sm-4">
+            <h2>MySplitFLix</h2>
+            <br/>
+            <p> In MySplitflix you'll be able to watch your favorite content with friends, and family. </p>
+            <p>Getting started you can host a stream, or you can join one if you have the link.</p>
+            <p> To host you're own stream you will need to create a
+                <a href="https://www.twitch.tv/">twitch account</a>, and have a unique <i>link</i>
+                that you can send out to friend and family.
+                To join a stream you will need to input a unique key your friend has given you.
+            </p>
+            <hr class="d-sm-none">
+        </div>
+
+        <div class="col-sm-8">
+            <h2>Create a Party</h2>
+            <h5>Enter Stream Link</h5>
+            <p>Host content for friends and family to see</p>
+            <p>Feel like sharing your opinion, <i>"Do it by Chat"</i></p>
+            <form id="CreatePartyForm">
+                <div class="columns is-gapless">
+                    <div class="column">
+                        <div class="control field is-large has-icons-left">
+                            <input class="input is-large" required="" type="text" id="CreatePartyID"
+                                   placeholder="https://your-link-here">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <br>
+                        <input id="cbutton" type="submit" class="button is-outlined is-large is-fullwidth" value="Create">
+                    </div>
+                </div>
+            </form>
+             <br>
+            <h2>Join a Party</h2>
+            <h5>Enter the unique password that was given below</h5>
+            <p>Enjoy your favorite content at the same exact time</p>
+            <form id="joinPartyForm">
+                <div class="columns is-gapless">
+                    <div class="column">
+                        <div class="control field is-large has-icons-left">
+                            <input class="input is-large" required="" type="text" id="JoinPartyID"
+                                   placeholder="Unique-Key-Given">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <br>
+                        <input id="jbutton" type="submit" class="button is-outlined is-large is-fullwidth" value="Join">
+                    </div>
+                </div>
+            </form>
+             </div>
+    </div>
+</div>
+
+</body>
+</html>

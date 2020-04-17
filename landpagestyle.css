@@ -1,0 +1,57 @@
+topnav {
+    background-color: #48459a;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    fill: #48459a;
+    float: right;
+    background-color: #48459a;
+    color: #353283;
+    text-align: center;
+    padding: 25px 25px;
+    text-decoration: none;
+    font-size: 15px;
+
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #48459a;
+    color: black;
+}
+
+.website{
+    text-align: center;
+    text-emphasis-color: #48459a;
+    color: #48459a;
+}
+#jbutton{
+    width: 100px;
+    height: 50px;
+    background-color: #48459a;
+    animation-name: jbutton;
+    animation-duration: 8s;
+}
+
+@keyframes jbutton {
+    from {background-color: #48459a;}
+    to {background-color: lightsteelblue;}
+}
+
+#cbutton{
+    width: 100px;
+    height: 50px;
+    background-color: #48459a;
+    animation-name: cbutton;
+    animation-duration: 8s;
+}
+
+@keyframes cbutton {
+    from {background-color: #48459a;}
+    to {background-color: lightsteelblue;}
+}
+
+h2{
+color: #353283;
+}
