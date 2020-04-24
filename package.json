@@ -3,17 +3,22 @@
   "version": "1.0.0",
   "dependencies": {
     "express": "^4.17.1",
+    "lib-jitsi-meet": "^1.0.6",
     "node": "12.14.1",
     "npm": "6.13.7",
     "socket.io": "^2.3.0"
   },
+  "main": "server.js",
   "scripts": {
-    "start": "node_modules/.bin/node server.js"
+    "start": "nodemon server.js"
   },
   "engines": {
     "express": "^4.17.1",
     "node": "12.14.1",
     "npm": "6.13.7",
     "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }

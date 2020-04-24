@@ -1,0 +1,35 @@
+body {
+    background-color: #1e2b58;
+}
+
+.title {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 5%;
+    color: #fff;
+    font-size: 3em;
+    text-shadow: 4px 3px 0px #5D8FFC, 9px 8px 0px rgba(0,0,0,0.15);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+}
+  
+.item {
+    max-width: 50%;
+    border-radius: 20px;
+	border: 1px solid #FFFFFF;
+	background-color: #353283;
+	padding: 10px;
+}
+
+#player {
+    margin-right: 30px;
+}
+
+#chat {
+    margin-left: 30px; 
+}

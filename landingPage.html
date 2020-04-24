@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="landpagestyle.css">
+    <!-- <link rel="stylesheet" href="landpagestyle.css"> -->
+    <script src='https://meet.jit.si/external_api.js'></script>
 </head>
 <body>
 <h3 class="website">MySplitFLix</h3>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Logo</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,13 +35,13 @@
             <p> In MySplitflix you'll be able to watch your favorite content with friends, and family. </p>
             <p>Getting started you can host a stream, or you can join one if you have the link.</p>
             <p> To host you're own stream you will need to create a
-                <a href="https://www.twitch.tv/">twitch account</a>, and have a unique <i>link</i>
-                that you can send out to friend and family.
-                To join a stream you will need to input a unique key your friend has given you.
+                room name.
+                To join a stream you will need to enter a room name.
             </p>
             <hr class="d-sm-none">
         </div>
 
+        <!-- CREATE A PARTY -->
         <div class="col-sm-8">
             <h2>Create a Party</h2>
             <h5>Enter Stream Link</h5>
@@ -52,7 +52,7 @@
                     <div class="column">
                         <div class="control field is-large has-icons-left">
                             <input class="input is-large" required="" type="text" id="CreatePartyID"
-                                   placeholder="https://your-link-here">
+                                   placeholder="Room Name">
                         </div>
                     </div>
                     <div class="column">
@@ -62,6 +62,8 @@
                 </div>
             </form>
              <br>
+
+             <!-- JOIN A PARTY -->
             <h2>Join a Party</h2>
             <h5>Enter the unique password that was given below</h5>
             <p>Enjoy your favorite content at the same exact time</p>
@@ -70,7 +72,7 @@
                     <div class="column">
                         <div class="control field is-large has-icons-left">
                             <input class="input is-large" required="" type="text" id="JoinPartyID"
-                                   placeholder="Unique-Key-Given">
+                                   placeholder="Room Name">
                         </div>
                     </div>
                     <div class="column">
@@ -82,6 +84,7 @@
              </div>
     </div>
 </div>
-
+<script src="video.js"></script>
+<script src="join.js"></script>
 </body>
 </html>
